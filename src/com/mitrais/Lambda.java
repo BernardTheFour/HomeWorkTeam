@@ -1,16 +1,14 @@
 package com.mitrais;
 
+import java.util.Optional;
+
 interface MathOperation {
-    double power(int a, int b);
+    double operate(int a, int b);
 }
 
 public class Lambda {
-    public static void main(String[] args){
-        powerOf(5, 3, (a, b) -> Math.pow(a, b));
-    }
-
-    public static void powerOf(int a, int b, MathOperation op){
-        double result = op.power(a, b);
-        System.out.println(a + "^" + b + " = " + result);
+    public static void operation(int a, int b, MathOperation op){
+        double result = op.operate(a, b);
+        System.out.println("Result = " + result);
     }
 }

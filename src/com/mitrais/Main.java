@@ -2,6 +2,8 @@ package com.mitrais;
 import java.util.List;
 import java.util.Optional;
 
+import static com.mitrais.Lambda.operation;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +11,8 @@ public class Main {
         /*
                 Lambda Part: create Interface, use method reference
         */
-
+        operation(125, 3, (a, b) -> Math.round(Math.pow(a, 1.0/b))); //lambda - nth root of
+        operation(5, 3, Math::pow); //method reference - power of
 
         // Point 3 & 4 by Bernard
         StreamExercise streamExercise = new StreamExercise();
