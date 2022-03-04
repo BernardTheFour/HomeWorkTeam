@@ -1,12 +1,12 @@
 package com.mitrais;
 
-public class Library {
+public class Book {
     int id;
     String title;
     int numberOfBorrower;
     boolean availability;
 
-    public Library(int id, String title, int numberOfBorrower, boolean availability) {
+    public Book(int id, String title, int numberOfBorrower, boolean availability) {
         this.id = id;
         this.title = title;
         this.numberOfBorrower = numberOfBorrower;
