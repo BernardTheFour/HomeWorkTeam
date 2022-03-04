@@ -16,7 +16,7 @@ public class StreamExercise {
         System.out.println("\n----Available Book----");
 
         List<Book> bookAvailable = dummyData.stream()
-                .filter(Book::isAvailabe)
+                .filter(Book::isAvailable)
                 .collect(Collectors.toList());
 
         printData(bookAvailable);
