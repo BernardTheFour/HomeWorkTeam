@@ -1,12 +1,37 @@
 package com.mitrais;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class StreamExercise {
     public StreamExercise() {
-        List<Book> dummyData = InitData(30);
+        // generate dummy data
+        List<Book> dummyData = InitData(15);
+
+        // print initial data
+        System.out.println("\n----Initial data----");
+        printData(dummyData);
+
+        // filter book that available to borrow
+        System.out.println("\n----Available Book----");
+
+        List<Book> bookAvailable = dummyData.stream()
+                .filter(Book::isAvailabe)
+                .collect(Collectors.toList());
+
+        printData(bookAvailable);
+
+        // get Id and title of book that available to borrow
+        System.out.println("\n----Book can be borrowed----");
+
+        Map<Integer, String> bookCanBorrow;
+        bookCanBorrow = bookAvailable.stream()
+                .collect(Collectors.toMap(Book::getId, Book::getTitle));
+
+        // print
+        for (Map.Entry<Integer, String> entry : bookCanBorrow.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue().toString());
+        }
     }
 
     public void printData(List<Book> list) {
@@ -16,19 +41,21 @@ public class StreamExercise {
     }
 
     public List<Book> InitData(int size) {
+        // randomized book title
         String[] titleA = {"Deep", "Ocean", "Jazz", "Forest", "Money", "Tail"};
-        String[] titleB = {"Under", "Nice", "Angry", "True", "Should", "Could"};
-        String[] titleC = {"Risk", "Utility", "Key", "Alone", "Vanish", "Wall"};
+        String[] titleB = {"Under", "Have", "Angry", "True", "Should", "Could"};
+        String[] titleC = {"Risk", "Utility", "Key", "Story", "Vanish", "Wall"};
 
         List<Book> listDummy = new ArrayList<>();
         Book dummyData;
+        Random random = new Random();
 
         for (int i = 0; i < size; i++) {
-            String title = titleA[new Random().nextInt(6)];
-            title += titleB[new Random().nextInt(6)];
-            title += titleC[new Random().nextInt(6)];
+            String title = titleA[random.nextInt(6)];
+            title += " " + titleB[random.nextInt(6)] + " ";
+            title += titleC[random.nextInt(6)];
 
-            dummyData = new Book(i, title, new Random().nextInt(20), new Random().nextBoolean());
+            dummyData = new Book(i, title, random.nextInt(20), random.nextBoolean());
             listDummy.add(dummyData);
         }
 

@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 public class Main {
 
     public static void main(String[] args) {
+
         /*
         * Stream Part, use stream and reducing my data into new structure
         * */
@@ -31,6 +32,17 @@ public class Main {
 
        System.out.println(optionalExample.concat(s1,s2));
 
+
+        // write your code here
+
+        // Point 1 & 2 by Winonnah Sarah
+
+        // Point 3 & 4 by Bernard
+        StreamExercise streamExercise = new StreamExercise();
+
+        // Point 6 & 7 by Hafid
+
+        // Point 5 & 8 by Alvian
 
     }
 }
