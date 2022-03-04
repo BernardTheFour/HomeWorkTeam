@@ -32,7 +32,7 @@ public class Book {
         return numberOfBorrower;
     }
 
-    public boolean isAvailabe() {
+    public boolean isAvailable() {
         return availability;
     }
 
