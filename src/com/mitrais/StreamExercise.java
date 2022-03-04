@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 public class StreamExercise {
-
     public StreamExercise() {
         List<Book> dummyData = InitData(30);
     }

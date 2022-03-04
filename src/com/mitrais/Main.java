@@ -1,13 +1,26 @@
 package com.mitrais;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Main {
 
     public static void main(String[] args) {
-        //Stream part
+        /*
+        * Stream Part, use stream and reducing my data into new structure
+        * */
+        StreamExercise dummy = new StreamExercise();
+        List<Book> lst = dummy.InitData(30);
+        int availableBook = lst.stream()
+                .filter(Book::isAvailabe)
+                .mapToInt(e -> 1).sum(); // can just use count() here but returns long instead of int
 
-       // Optional part
+        System.out.println(availableBook);
+
+       /*
+       * Optional Part
+       * */
        OptionalExample optionalExample = new OptionalExample();
        String s1Value=new String("Hello ");
        String value2=null;
