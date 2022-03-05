@@ -18,7 +18,17 @@ public class Main {
         StreamExercise streamExercise = new StreamExercise();
 
         // Point 6 & 7 by Hafid
+        DateTimePeriodExample myExample = new DateTimePeriodExample();
 
+        System.out.println("\nDate & Period usage example (get age): ");
+        myExample.countAge();
+        System.out.println("---------------------");
+        System.out.println("Time & Duration usage example (get working seconds): ");
+        System.out.println(myExample.countWorkingSeconds() + " seconds");
+        System.out.println("---------------------");
+        System.out.println("DateTime & ChronoUnit usage example (get minutes to new year): ");
+        System.out.println(myExample.countMinutesToNewYear() + " minutes");
+        
         // Point 5 & 8 by Alvian
         /*
          * Stream Part, use stream and reducing my data into new structure
